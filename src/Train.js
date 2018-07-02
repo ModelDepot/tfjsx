@@ -52,7 +52,12 @@ export class Train extends React.Component {
 
     return (
       <div>
-        <h1>Train</h1>
+        <h1 style={{
+          fontFamily: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
+          fontWeight: 300,
+        }}>
+          {'<'}Train{' />'}
+        </h1>
         {metricElems}
         {this.state.modelElement}
       </div>
@@ -77,7 +82,6 @@ export class Train extends React.Component {
 
   async * _train(model) {
     const {
-      train,
       trainData,
       samples,
       validationData,
@@ -86,6 +90,7 @@ export class Train extends React.Component {
       display,
     } = this.props;
 
+
     // TODO: Switch to PropTypes
     const onBatchEnd = typeof this.props.onBatchEnd === 'function' ? this.props.onBatchEnd : () => { };
 
@@ -93,13 +98,14 @@ export class Train extends React.Component {
       const trainGenerator = trainData();
       for (let batch = 0; batch * batchSize < samples; batch++) {
         // Pause training when train prop is false
+        const train = this.props.train;
         if (!train) {
           yield;
         }
 
         const trainBatch = this._getBatch(trainGenerator, batchSize);
         const history = await model.fit(trainBatch.xs, trainBatch.ys, { batchSize: trainBatch.xs.shape[0], epochs: 1 });
-        onBatchEnd(history.history);
+        onBatchEnd(history.history, model);
         tf.dispose(trainBatch);
 
         if (display) {

@@ -11,6 +11,7 @@ favorite front-end library (Tensorflow.js).
 - Define models in React/JSX
 - Stream training data via [ES6 Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
 - Turn on training progress visualization with a single flag
+- Pause training
 
 # Demo App
 
@@ -79,6 +80,7 @@ epochs | Number | Number of epochs to train the model for
 batchSize | Number | The number of samples to include in each training batch
 samples | Number | Number of expected samples the generator will be able to generate.
 onTrainEnd | function(tf.Model) | Called after the model is done training, the trained model is passed into the callback
+onBatchEnd | function(Object metrics, tf.Model) | Called after each batch is done training, an object with that batch's training metrics along with the current model is passed into the callback.
 train | Bool | Turn on and off training
 display | Bool | Enable or disable graphing of training status
 
@@ -99,8 +101,9 @@ The following layers are currently available:
 
 Adding new layer types is simple, PRs are always welcome :)
 
-# Wishlist
+# Future Roadmap/Wishlist
 
 - Model summarization (adding `display` flag to `Model`)
 - Layer activation visualization (adding `display` flag to any layer)
-- Evaluation visualizations
+- Model evaluation visualizations
+- Allow pre-trained models to be used as a layer
