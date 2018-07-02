@@ -19,6 +19,8 @@ Check out/clone the [demo app](openanissueifthisisntalink) to get started quicke
 
 ![out of the box training visualization](https://github.com/ModelDepot/tfjsx/blob/master/assets/demo.png?raw=true)
 
+Out of the box training metric visualization!
+
 # Getting Started
 
 ## Installation
