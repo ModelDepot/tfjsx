@@ -4,8 +4,8 @@ Have you ever woken up one day and thought: My life would be so much better
 if I could define and train my machine learning models in React. I haven't.
 
 Define, train and visualize training of your ML models in your
-favorite front-end library (React) backed by your second
-favorite front-end library (Tensorflow.js).
+favorite front-end library ([React](https://reactjs.org/)) backed by your second
+favorite front-end library ([Tensorflow.js](https://js.tensorflow.org/)).
 
 ## Features:
 - Define models in React/JSX
@@ -91,7 +91,8 @@ All valid config properties passed into `model.compile` are valid here.
 
 ## Layers
 
-Similar to `Model`, all valid layers have their props passed through as config.
+Similar to `Model`, all valid layers have their props passed through as
+properties of the `config` object in Tensorflow.js.
 The following layers are currently available:
 
 - [Conv2D](https://js.tensorflow.org/api/0.11.7/#layers.conv2d)
