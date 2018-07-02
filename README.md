@@ -17,6 +17,8 @@ favorite front-end library ([Tensorflow.js](https://js.tensorflow.org/)).
 
 Check out/clone the [demo app](openanissueifthisisntalink) to get started quicker.
 
+![out of the box training visualization](https://github.com/ModelDepot/tfjsx/blob/master/assets/demo.png?raw=true)
+
 # Getting Started
 
 ## Installation
