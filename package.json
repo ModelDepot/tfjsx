@@ -32,7 +32,7 @@
     "webpack-cli": "^2.0.14"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "test": "jest",
     "watch": "webpack --watch"
   },
